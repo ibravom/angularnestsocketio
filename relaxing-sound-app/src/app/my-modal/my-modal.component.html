@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>
+  Dale <span class="green">ritmo</span> a tu entrenamiento
+</h1>
+<div mat-dialog-content>
+  <!-- Tu contenido aquí -->
+  <p class="subtitle-material-ui">Con qué quieres concentrarte hoy?</p>
+  <ng-container *ngFor="let song of songs">
+    <app-song-card
+      [cardId]="song.id"
+      [songUrl]="song.songUrl"
+      [title]="song.title"
+      [artist]="song.artist"
+      [likes]="song.likes"
+      [imageUrl]="song.imageUrl"
+      [plays]="song.plays">
+    </app-song-card>
+  </ng-container>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="warn" [mat-dialog-close]="true"  class="closeButton">Cerrar</button>
+</div>

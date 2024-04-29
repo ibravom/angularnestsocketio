@@ -1,0 +1,38 @@
+<mat-card class="song-card">
+  <mat-card-header>
+    <div mat-card-avatar class="song-image-wrapper">
+      <img
+        mat-card-image
+        class="song-image"
+        [src]="imageUrl"
+        alt="Imagen de la canción"
+      />
+      <button
+        mat-icon-button
+        class="play-icon"
+        (click)="songUrl && playSong(songUrl)"
+      >
+        <mat-icon>{{ isPlaying ? "pause" : "play_arrow" }}</mat-icon>
+      </button>
+    </div>
+    <mat-card-title class="">{{title}}</mat-card-title>
+    <mat-card-subtitle>{{artist}}</mat-card-subtitle>
+    <mat-card-subtitle>
+      <button
+        class="horizontalSpec likeButtonInactive"
+        (click)="toggleLike()"
+        [class.notLiked]="!isLiked"
+        [class.liked]="isLiked"
+        aria-label="Like"
+      >
+        <mat-icon>favorite</mat-icon> <span>{{likes}}</span>
+      </button>
+      <button
+        class="horizontalSpec reproductionsButton"
+        aria-label="Play count"
+      >
+        <mat-icon>play_circle_filled</mat-icon> {{plays}}
+      </button>
+    </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

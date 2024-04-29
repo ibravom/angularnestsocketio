@@ -1,0 +1,10 @@
+# .gitignore
+node_modules/
+dist/
+/build/
+*.log
+.env
+# Archivos específicos del entorno de desarrollo IDE o editor
+.idea/
+*.code-workspace
+.vscode/
